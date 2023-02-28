@@ -10,11 +10,11 @@ public class CssClassforCurrentLink : TagHelper
     private const string TargetAttributeName = "asp-link-class";
 
     [ViewContext]
-    public ViewContext? ViewContext { get; set; }
+    public ViewContext ViewContext { get; set; }
 
 
     [HtmlAttributeName("class")]
-    public string? Classes { get; set; }
+    public string Classes { get; set; }
 
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
