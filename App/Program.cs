@@ -1,9 +1,13 @@
 // Services
+using App.Services;
+using App.Services.Interfaces;
 using SixLabors.ImageSharp.Web.Caching;
 using SixLabors.ImageSharp.Web.DependencyInjection;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+builder.Services.AddSingleton<IProcessadorImagem, ProcessadorImagemService>();
 
 builder.Services.AddImageSharp(
     options =>
@@ -15,7 +19,7 @@ builder.Services.AddImageSharp(
     ).Configure<PhysicalFileSystemCacheOptions>(
     options =>
     {
-        options.CacheFolder = "img/cache"; // default: wwwroot/ 
+        options.CacheFolder = "img/cache"; // default: wwwroot/ + CacheFolder
     });
 
 // Configure
