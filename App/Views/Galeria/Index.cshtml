@@ -1,0 +1,42 @@
+@model IEnumerable<GaleriaModel>
+@{ ViewBag.Subtitulo = "Galerias de Imagens"; }
+
+<a asp-action="Cadastrar" class="btn btn-primary">Nova Galeria</a>
+<hr>
+@if (Model.Count() > 0)
+{
+    <table class="table table-striped tabela-galeria">
+        <thead>
+            <tr>@Html.DisplayNameFor(m => m.IdGaleria)</tr>
+            <tr>@Html.DisplayNameFor(m => m.Titulo)</tr>
+            <tr>Ações</tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.IdGaleria</td>
+                    <td>@item.Titulo</td>
+                    <td>
+                        <a asp-action="Index" asp-controller="Imagem" asp-route-id="@item.IdGaleria" class="btn btn-success">
+                            <i class="bi bi-images" title="Imagens"></i>
+                        </a>
+                        <a asp-action="Editar" asp-route-id="@item.IdGaleria" class="btn btn-secundary">
+                            <i class="bi bi-pencil" title="Alterar"></i>
+                        </a>
+                        <a asp-action="Excluir" asp-route-id="@item.IdGaleria" class="btn btn-danger">
+                            <i class="bi bi-trash" title="Excluir"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning" role="alert">
+        Nenhuma galeria cadastrada
+    </div>
+}
+
