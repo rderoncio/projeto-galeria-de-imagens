@@ -1,30 +1,35 @@
 @model IEnumerable<GaleriaModel>
-@{ ViewBag.Subtitulo = "Galerias de Imagens"; }
+@{
+    ViewBag.Subtitulo = "Galerias de Imagens";
+}
 
 <a asp-action="Cadastrar" class="btn btn-primary">Nova Galeria</a>
 <hr>
 @if (Model.Count() > 0)
 {
-    <table class="table table-striped tabela-galeria">
+    <table class="table table-striped tabela-galerias">
         <thead>
-            <tr>@Html.DisplayNameFor(m => m.IdGaleria)</tr>
-            <tr>@Html.DisplayNameFor(m => m.Titulo)</tr>
-            <tr>Ações</tr>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.IdGaleria)</th>
+                <th>@Html.DisplayNameFor(m => m.Titulo)</th>
+                <th>Ações</th>
+            </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.IdGaleria</td>
+                    <td>@item.IdGaleria.ToString("D6")</td>
                     <td>@item.Titulo</td>
                     <td>
-                        <a asp-action="Index" asp-controller="Imagem" asp-route-id="@item.IdGaleria" class="btn btn-success">
+                        <a asp-action="Index" asp-controller="Imagem" asp-route-id="@item.IdGaleria"
+                            class="btn  btn-sm btn-success">
                             <i class="bi bi-images" title="Imagens"></i>
                         </a>
-                        <a asp-action="Editar" asp-route-id="@item.IdGaleria" class="btn btn-secundary">
+                        <a asp-action="Alterar" asp-route-id="@item.IdGaleria" class="btn btn-sm btn-secundary">
                             <i class="bi bi-pencil" title="Alterar"></i>
                         </a>
-                        <a asp-action="Excluir" asp-route-id="@item.IdGaleria" class="btn btn-danger">
+                        <a asp-action="Excluir" asp-route-id="@item.IdGaleria" class="btn btn-sm btn-danger">
                             <i class="bi bi-trash" title="Excluir"></i>
                         </a>
                     </td>

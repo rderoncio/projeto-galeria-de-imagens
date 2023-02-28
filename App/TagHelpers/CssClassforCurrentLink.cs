@@ -5,13 +5,12 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 namespace App.TagHelpers;
 
 [HtmlTargetElement("a", Attributes = TargetAttributeName)]
-public class CssClassforCurrentLink : TagHelper
+public class CssClassForCurrentLink : TagHelper
 {
     private const string TargetAttributeName = "asp-link-class";
 
     [ViewContext]
     public ViewContext ViewContext { get; set; }
-
 
     [HtmlAttributeName("class")]
     public string Classes { get; set; }

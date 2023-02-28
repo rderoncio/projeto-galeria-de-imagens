@@ -1,0 +1,18 @@
+@model GaleriaModel
+@{
+    ViewBag.Subtitulo = "Alteração de Galeria de Imagem";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="@Model.IdGaleria">
+    <div class="form-group">
+        <label class="form-label" asp-for="@Model.Titulo"></label>
+        <input class="form-control" asp-for="@Model.Titulo">
+        <span class="text-danger" asp-validation-for="@Model.Titulo"></span>
+    </div>
+
+    <div class="mt-3">
+        <a class="btn btn-outline-danger" asp-action="Index">Cancelar</a>
+        <button class="btn btn-outline-success" type="submit">Salvar</button>
+    </div>
+</form>

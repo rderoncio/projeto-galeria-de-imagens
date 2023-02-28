@@ -6,7 +6,7 @@ namespace App.Context;
 public class DatabaseContext : DbContext
 {
     public DbSet<ImagemModel> Imagens { get; set; }
-    public DbSet<GaleriaModel> Galeria { get; set; }
+    public DbSet<GaleriaModel> Galerias { get; set; }
 
     public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
     {

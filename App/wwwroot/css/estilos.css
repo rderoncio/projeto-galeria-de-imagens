@@ -1,0 +1,13 @@
+.link-ativo {
+    text-shadow: 0px 0px 2px #bbb !important;
+    color: white !important;
+}
+
+.tabela-galerias tr>th:first-child,
+.tabela-galerias tr>td:first-child,
+.tabela-galerias tr>th:last-child,
+.tabela-galerias tr>td:last-child {
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+}
