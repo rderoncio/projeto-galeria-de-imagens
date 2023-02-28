@@ -23,5 +23,5 @@ public class ImagemModel
     public IFormFile ArquivoImagem { get; set; }
 
     [NotMapped]
-    public string CaminhoImagem { get { return Path.Combine($"\\img\\", IdImagem.ToString("D6" + ".webp")); } }
+    public string CaminhoImagem { get { return Path.Combine($"\\img\\", IdImagem.ToString("D6") + ".webp"); } }
 }
