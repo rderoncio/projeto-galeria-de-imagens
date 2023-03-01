@@ -1,1 +1,25 @@
-@{ ViewBag.Subtitulo = "Página Principal"; }
+@model IEnumerable<GaleriaModel>
+@{
+    ViewBag.Subtitulo = "Galerias de Imagens";
+}
+
+@foreach (GaleriaModel galeria in Model)
+{
+    if (galeria.Imagens.Count() > 0)
+    {
+        <h2>@galeria.Titulo</h2>
+        <hr>
+        <div class="row g-3">
+            @foreach (ImagemModel imagem in galeria.Imagens)
+            {
+                <div class="col-2">
+                    <div class="card">
+                        <img class="img-responsive p-3" src='@($"{imagem.CaminhoImagem}?{DateTime.Now.ToLocalTime()}")' >
+                    </div>
+                </div>
+            }
+        </div>
+        <hr>
+    }
+
+}
