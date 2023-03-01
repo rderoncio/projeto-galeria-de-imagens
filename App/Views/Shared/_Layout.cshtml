@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="\lib\bootstrap5\src\css\bootstrap.min.css">
     <link rel="stylesheet" href="\lib\bootstrap-icons\font\bootstrap-icons.min.css">
     <link rel="stylesheet" href="\css\estilos.css">
+    <link rel="stylesheet" href="\lib\lightbox2\dist\css\lightbox.min.css">
     <link rel="icon" href="\img\icon\favicon.png" type="image/png" sizes="32x32">
     <title>Galeria</title>
 </head>
@@ -40,6 +41,11 @@
     </div>
 
     @RenderSection("Scripts", false)
+
+    <script src="\lib\lightbox2\dist\js\lightbox-plus-jquery.min.js"></script>
+
+    <script> lightbox.option({'albumLabel': 'Imagem %1 de %2'}); </script>
+
 </body>
 
 </html>

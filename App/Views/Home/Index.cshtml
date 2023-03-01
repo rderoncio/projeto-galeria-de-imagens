@@ -14,7 +14,9 @@
             {
                 <div class="col-2">
                     <div class="card">
-                        <img class="img-responsive p-3" src='@($"{imagem.CaminhoImagem}?{DateTime.Now.ToLocalTime()}")' >
+                        <a href='@($"{imagem.CaminhoImagem}?width=600&{DateTime.Now.ToShortTimeString()}")' data-lightbox='@imagem.IdGaleria.ToString("D6")' data-title="@imagem.Titulo">
+                            <img class="img-responsive p-3" src='@($"{imagem.CaminhoImagem}?width=200&{DateTime.Now.ToShortTimeString()}")' width="100%">
+                        </a>
                     </div>
                 </div>
             }
@@ -23,3 +25,4 @@
     }
 
 }
+
