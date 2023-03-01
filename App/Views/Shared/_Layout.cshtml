@@ -29,7 +29,7 @@
     </nav>
 
     <div class="container mt-2">
-        <h1>@ViewBag.Subtitulo</h1>
+        <h1>@Html.Raw(ViewBag.Subtitulo)</h1>
         <hr>
         @RenderBody()
     </div>

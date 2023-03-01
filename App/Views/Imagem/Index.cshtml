@@ -1,0 +1,51 @@
+@model IEnumerable<ImagemModel>
+
+@{
+    ViewBag.Subtitulo = $"Imagens da Galeria <b>{ViewBag.TituloGaleria}</b>";
+}
+
+<a asp-action="Cadastrar" asp-route-id="@ViewBag.IdGaleria" class="btn btn-primary">Nova Imagem</a>
+<hr>
+
+@if (Model.Count() > 0)
+{
+    <table class="table table-striped tabela-imagens">
+        <thead>
+            <tr>
+                <th>Imagem</th>
+                <th>@Html.DisplayNameFor(m => m.IdImagem)</th>
+                <th>@Html.DisplayNameFor(m => m.Titulo)</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><img src='@($"{item.CaminhoImagem}?{DateTime.Now.ToLocalTime()}")' width="80px"></td>
+                    <td>@item.IdImagem.ToString("D6")</td>
+                    <td>@item.Titulo</td>
+                    <td>
+                        <a asp-action="AplicarEfeito" asp-controller="Imagem" asp-route-id="@item.IdImagem"
+                            class="btn  btn-sm btn-success">
+                            <i class="bi bi-magic" title="Imagens"></i>
+                        </a>
+                        <a asp-action="Alterar" asp-route-id="@item.IdImagem" class="btn btn-sm btn-secundary">
+                            <i class="bi bi-pencil" title="Alterar"></i>
+                        </a>
+                        <a asp-action="Excluir" asp-route-id="@item.IdImagem" class="btn btn-sm btn-danger">
+                            <i class="bi bi-trash" title="Excluir"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning" role="alert">
+        Nenhuma imagem cadastrada nesta galeria.
+    </div>
+}
+

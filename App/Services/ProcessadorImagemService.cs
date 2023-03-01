@@ -102,7 +102,7 @@ public class ProcessadorImagemService : IProcessadorImagem
             }).BackgroundColor(new Rgba32(255, 255, 255, 0)));
         }
 
-        caminhoImagem = caminhoImagem.Replace(extensao, "webp");
+        caminhoImagem = caminhoImagem.Replace(extensao, ".webp");
         await imagem.SaveAsWebpAsync(caminhoImagem);
 
         return true;

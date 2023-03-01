@@ -3,6 +3,17 @@
     color: white !important;
 }
 
+.tabela-imagens>tbody>tr>td {
+    vertical-align: middle;
+}
+
+
+.tabela-imagens tr>th:first-child,
+.tabela-imagens tr>td:first-child,
+.tabela-imagens tr>th:first-child,
+.tabela-imagens tr>td:nth-child(2),
+.tabela-imagens tr>th:nth-child(2),
+.tabela-imagens tr>td:last-child,
 .tabela-galerias tr>th:first-child,
 .tabela-galerias tr>td:first-child,
 .tabela-galerias tr>th:last-child,

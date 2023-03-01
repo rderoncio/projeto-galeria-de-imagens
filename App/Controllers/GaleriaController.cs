@@ -9,12 +9,10 @@ namespace App.Controllers;
 public class GaleriaController : Controller
 {
     private readonly DatabaseContext _database;
-    private readonly IProcessadorImagem _processarImagemService;
 
-    public GaleriaController(DatabaseContext database, IProcessadorImagem processarImagemService)
+    public GaleriaController(DatabaseContext database)
     {
         _database = database;
-        _processarImagemService = processarImagemService;
     }
     public IActionResult Index()
     {
